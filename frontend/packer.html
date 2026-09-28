@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Employee Document Packer | Office Toolbox
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            🧰
+        </span>
+
+        <span>
+            Office Toolbox
+        </span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#tools">
+            All tools
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="packer-main">
+
+
+    <a
+        href="index.html#tools"
+        class="back-link"
+    >
+        ← Back to all tools
+    </a>
+
+
+
+    <!-- =====================================================
+         PAGE HEADING
+    ====================================================== -->
+
+    <section class="packer-heading">
+
+        <p class="section-label">
+            EMPLOYEE DOCUMENT PACKER
+        </p>
+
+        <h1>
+            Create an employee document pack
+        </h1>
+
+        <p>
+            Organize employee documents into one clean,
+            downloadable ZIP file.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EMPLOYEE DETAILS
+    ====================================================== -->
+
+    <section class="packer-card">
+
+        <h2>
+            Employee details
+        </h2>
+
+
+        <div class="form-grid">
+
+
+            <!-- EMPLOYEE ID -->
+
+            <div class="form-group">
+
+                <label for="employeeId">
+                    Employee ID
+                </label>
+
+                <input
+                    id="employeeId"
+                    type="text"
+                    placeholder="e.g. EMP-1042"
+                >
+
+            </div>
+
+
+
+            <!-- EMPLOYEE NAME -->
+
+            <div class="form-group">
+
+                <label for="employeeName">
+                    Employee name
+                </label>
+
+                <input
+                    id="employeeName"
+                    type="text"
+                    placeholder="e.g. Alex Morgan"
+                >
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DOCUMENT UPLOAD
+    ====================================================== -->
+
+    <section class="packer-card">
+
+
+        <div class="section-title-row">
+
+
+            <div>
+
+                <h2>
+                    Documents
+                </h2>
+
+                <p>
+                    Upload PDF, JPG or PNG files.
+                </p>
+
+            </div>
+
+
+            <span
+                id="fileCount"
+                class="file-count"
+            >
+                0 files
+            </span>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             DROP ZONE
+        ================================================== -->
+
+        <div
+            id="dropZone"
+            class="drop-zone"
+        >
+
+
+            <div class="upload-icon">
+                📤
+            </div>
+
+
+            <h3>
+                Drop documents here
+            </h3>
+
+
+            <p>
+                or click to browse from your device
+            </p>
+
+
+            <span>
+                PDF • JPG • JPEG • PNG
+            </span>
+
+
+
+            <!-- FILE INPUT -->
+
+            <input
+                id="documents"
+                type="file"
+                multiple
+                accept=".pdf,.jpg,.jpeg,.png"
+                style="display: none;"
+            >
+
+
+
+            <!-- CHOOSE FILES -->
+
+            <label
+                for="documents"
+                class="secondary-button"
+                style="
+                    display: inline-block;
+                    cursor: pointer;
+                "
+            >
+                Choose files
+            </label>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             DOCUMENT LIST
+        ================================================== -->
+
+        <div
+            id="documentList"
+            class="document-list"
+        ></div>
+
+
+
+        <!-- =================================================
+             EMPTY MESSAGE
+        ================================================== -->
+
+        <div
+            id="emptyMessage"
+            class="empty-message"
+        >
+            No documents selected yet.
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CREATE PACK
+    ====================================================== -->
+
+    <section class="packer-card create-card">
+
+
+        <div class="pack-summary">
+
+
+            <div>
+
+                <span class="summary-label">
+                    PACK SUMMARY
+                </span>
+
+
+                <h3 id="summaryTitle">
+                    Ready to create
+                </h3>
+
+
+                <p id="summaryText">
+                    Add employee details and documents.
+                </p>
+
+            </div>
+
+
+
+            <div
+                id="summaryCount"
+                class="summary-count"
+            >
+                0
+            </div>
+
+
+        </div>
+
+
+
+        <!-- CREATE BUTTON -->
+
+        <button
+            id="createButton"
+            class="primary-button"
+            type="button"
+        >
+            📦 Create Document Pack
+        </button>
+
+
+
+        <!-- STATUS -->
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="logo">
+            🧰 Office Toolbox
+        </div>
+
+
+        <p>
+            Simple tools for everyday work.
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
