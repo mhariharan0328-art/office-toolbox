@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mhariharan0328-art.github.io/office-toolbox/sitemap.xml
