@@ -1,245 +1,934 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Office Toolbox – Free Excel, PDF & Office Productivity Tools</title>
-
-    <meta name="description" content="Free online office productivity tools for Excel, PDFs, files and everyday workplace tasks. Merge PDFs online with Office Toolbox.">
+    <title>Office Toolbox | Free PDF & Office Productivity Tools</title>
+    <meta name="description" content="Use free online office tools to merge PDF files and organize employee documents. Simple, practical tools for everyday work.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://mhariharan0328-art.github.io/office-toolbox/">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Office Toolbox – Free Office Productivity Tools">
-    <meta property="og:description" content="Free online tools for Excel, PDF merging, files and everyday office work.">
+    <meta property="og:title" content="Office Toolbox | Free Office Tools">
+    <meta property="og:description" content="Merge PDFs and organize employee documents with free online office productivity tools.">
     <meta property="og:url" content="https://mhariharan0328-art.github.io/office-toolbox/">
     <meta name="twitter:card" content="summary">
 
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Office Toolbox",
-      "url": "https://mhariharan0328-art.github.io/office-toolbox/",
-      "description": "Free online office productivity tools for Excel, PDFs, files and everyday workplace tasks."
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Office Toolbox",
+        "url": "https://mhariharan0328-art.github.io/office-toolbox/",
+        "description": "Free online PDF and office productivity tools."
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            color: #172033;
+            background: #f6f8fc;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .ot-page {
+            overflow: hidden;
+        }
+
+        .ot-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 16px max(5%, calc((100% - 1200px) / 2));
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e7ebf3;
+            backdrop-filter: blur(12px);
+        }
+
+        .ot-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 21px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .ot-brand-icon {
+            display: grid;
+            place-items: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: #edf2ff;
+            font-size: 24px;
+        }
+
+        .ot-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .ot-nav a,
+        .ot-footer-links a {
+            color: #5c6679;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .ot-nav a:hover,
+        .ot-footer-links a:hover {
+            color: #2563eb;
+        }
+
+        .ot-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 12px 20px;
+            border: 1px solid #2563eb;
+            border-radius: 12px;
+            background: #2563eb;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .2s, background .2s;
+        }
+
+        .ot-button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .ot-button-small {
+            min-height: 42px;
+            padding: 9px 16px;
+        }
+
+        .ot-button-secondary {
+            border-color: #d9e2f5;
+            background: white;
+            color: #244a99;
+        }
+
+        .ot-button-secondary:hover {
+            background: #f0f5ff;
+        }
+
+        .ot-hero {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 60px;
+            width: min(1200px, calc(100% - 48px));
+            min-height: 500px;
+            margin: 40px auto 65px;
+            padding: 60px;
+            border: 1px solid #e8edf8;
+            border-radius: 28px;
+            background: linear-gradient(135deg, #fff 35%, #edf3ff 100%);
+            box-shadow: 0 20px 60px rgba(37, 68, 120, .06);
+        }
+
+        .ot-hero-copy {
+            max-width: 650px;
+        }
+
+        .ot-eyebrow,
+        .ot-section-label {
+            display: inline-block;
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+        }
+
+        .ot-hero h1 {
+            margin: 20px 0;
+            font-size: clamp(38px, 4.5vw, 62px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .ot-hero h1 span {
+            display: block;
+            color: #2563eb;
+        }
+
+        .ot-hero-description {
+            max-width: 540px;
+            margin: 0;
+            color: #68748a;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .ot-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .ot-hero-note {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 22px;
+            color: #647087;
+            font-size: 14px;
+        }
+
+        .ot-hero-note span {
+            color: #16a36a;
+            font-weight: 900;
+        }
+
+        .ot-hero-visual {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+            min-height: 290px;
+            padding: 35px 10px;
+        }
+
+        .ot-visual-glow {
+            position: absolute;
+            inset: 5%;
+            z-index: 0;
+            border-radius: 50%;
+            background: #dce7ff;
+            filter: blur(35px);
+        }
+
+        .ot-visual-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 22px;
+            border: 1px solid #e8edf6;
+            border-radius: 18px;
+            background: white;
+            box-shadow: 0 15px 35px rgba(31, 53, 91, .09);
+        }
+
+        .ot-visual-card-secondary {
+            margin-left: 35px;
+        }
+
+        .ot-visual-file-icon {
+            display: grid;
+            place-items: center;
+            width: 54px;
+            height: 54px;
+            flex-shrink: 0;
+            border-radius: 14px;
+            background: #edf2ff;
+            font-size: 28px;
+        }
+
+        .ot-visual-card strong,
+        .ot-visual-card div span {
+            display: block;
+        }
+
+        .ot-visual-card strong {
+            margin-bottom: 4px;
+            font-size: 16px;
+        }
+
+        .ot-visual-card div span {
+            color: #748096;
+            font-size: 13px;
+        }
+
+        .ot-visual-check {
+            margin-left: auto;
+            color: #16a36a;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .ot-visual-caption {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #65728b;
+            font-size: 14px;
+        }
+
+        .ot-tools-section,
+        .ot-benefits-section,
+        .ot-about-section,
+        .ot-privacy-section {
+            width: min(1200px, calc(100% - 48px));
+            margin: 0 auto;
+            padding-bottom: 85px;
+        }
+
+        .ot-section-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 35px;
+            margin-bottom: 30px;
+        }
+
+        .ot-section-heading h2,
+        .ot-benefits-heading h2,
+        .ot-about-card h2,
+        .ot-privacy-section h2 {
+            margin: 10px 0;
+            font-size: clamp(28px, 3vw, 38px);
+            line-height: 1.25;
+            letter-spacing: -.8px;
+        }
+
+        .ot-section-heading > p {
+            max-width: 380px;
+            margin: 0;
+            color: #68748a;
+        }
+
+        .ot-tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .ot-tool-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 30px;
+            border: 1px solid #e6ebf3;
+            border-radius: 20px;
+            background: white;
+            box-shadow: 0 8px 25px rgba(30, 50, 90, .035);
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .ot-tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 40px rgba(30, 50, 90, .08);
+        }
+
+        .ot-tool-featured {
+            border-color: #cbd9ff;
+            background: linear-gradient(135deg, #fff, #f1f5ff);
+        }
+
+        .ot-tool-topline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .ot-tool-icon {
+            display: grid;
+            place-items: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 16px;
+            background: #edf2ff;
+            font-size: 29px;
+        }
+
+        .ot-status {
+            padding: 6px 10px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .ot-status-live {
+            background: #e8f8ef;
+            color: #12804a;
+        }
+
+        .ot-status-soon {
+            background: #f0f2f6;
+            color: #707b8e;
+        }
+
+        .ot-tool-card h3 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            line-height: 1.3;
+        }
+
+        .ot-tool-card > p {
+            margin: 0 0 18px;
+            color: #68748a;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .ot-tool-features {
+            display: grid;
+            gap: 8px;
+            margin: 0 0 24px;
+            padding: 0;
+            list-style: none;
+            color: #505d72;
+            font-size: 14px;
+        }
+
+        .ot-tool-features li::before {
+            content: "✓";
+            margin-right: 10px;
+            color: #168b58;
+            font-weight: 900;
+        }
+
+        .ot-tool-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #2563eb;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .ot-tool-link:hover {
+            color: #1d4ed8;
+        }
+
+        .ot-tool-upcoming {
+            background: #fbfcfe;
+        }
+
+        .ot-benefits-heading {
+            max-width: 700px;
+            margin: 0 auto 32px;
+            text-align: center;
+        }
+
+        .ot-benefits-heading > p {
+            color: #68748a;
+        }
+
+        .ot-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .ot-benefit {
+            padding: 28px;
+            border: 1px solid #e6ebf3;
+            border-radius: 18px;
+            background: white;
+        }
+
+        .ot-benefit-icon {
+            font-size: 30px;
+        }
+
+        .ot-benefit h3 {
+            margin: 15px 0 8px;
+        }
+
+        .ot-benefit p {
+            margin: 0;
+            color: #68748a;
+            font-size: 14px;
+        }
+
+        .ot-about-card {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            padding: 45px;
+            border-radius: 22px;
+            background: #172033;
+            color: white;
+        }
+
+        .ot-about-symbol {
+            flex-shrink: 0;
+            font-size: 45px;
+        }
+
+        .ot-about-card h2 {
+            color: white;
+        }
+
+        .ot-about-card p {
+            max-width: 750px;
+            margin-bottom: 0;
+            color: #c0c8d8;
+            line-height: 1.8;
+        }
+
+        .ot-privacy-section {
+            padding-bottom: 75px;
+        }
+
+        .ot-privacy-section > div {
+            padding: 30px;
+            border: 1px solid #e6ebf3;
+            border-radius: 18px;
+            background: white;
+        }
+
+        .ot-privacy-section h2 {
+            font-size: 28px;
+        }
+
+        .ot-privacy-section p {
+            color: #68748a;
+            line-height: 1.8;
+        }
+
+        .ot-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            padding: 38px 24px;
+            border-top: 1px solid #e6ebf3;
+            background: white;
+            text-align: center;
+        }
+
+        .ot-footer > p {
+            margin: 0;
+            color: #748096;
+            font-size: 14px;
+        }
+
+        .ot-footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            margin: 6px 0;
+        }
+
+        .ot-copyright {
+            font-size: 12px !important;
+        }
+
+        @media (max-width: 800px) {
+            .ot-navbar {
+                flex-wrap: wrap;
+                padding: 13px 22px;
+            }
+
+            .ot-nav {
+                gap: 16px;
+            }
+
+            .ot-hero {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                width: calc(100% - 30px);
+                min-height: auto;
+                margin-top: 20px;
+                padding: 35px 25px;
+            }
+
+            .ot-hero-visual {
+                min-height: 230px;
+                padding: 15px 0;
+            }
+
+            .ot-section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .ot-benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .ot-navbar {
+                gap: 12px;
+            }
+
+            .ot-brand {
+                font-size: 18px;
+            }
+
+            .ot-nav {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                padding-top: 8px;
+                border-top: 1px solid #edf0f5;
+            }
+
+            .ot-button-small {
+                min-height: 38px;
+                padding: 8px 11px;
+                font-size: 13px;
+            }
+
+            .ot-hero h1 {
+                font-size: 39px;
+                letter-spacing: -1.3px;
+            }
+
+            .ot-hero-description {
+                font-size: 15px;
+            }
+
+            .ot-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .ot-tools-section,
+            .ot-benefits-section,
+            .ot-about-section,
+            .ot-privacy-section {
+                width: calc(100% - 30px);
+                padding-bottom: 55px;
+            }
+
+            .ot-tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ot-tool-card {
+                padding: 24px;
+            }
+
+            .ot-section-heading h2,
+            .ot-benefits-heading h2,
+            .ot-about-card h2 {
+                font-size: 29px;
+            }
+
+            .ot-about-card {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 28px;
+            }
+
+            .ot-privacy-section > div {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+<div class="ot-page">
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <span class="logo-icon">🧰</span>
+    <header class="ot-navbar">
+        <a class="ot-brand" href="./index.html" aria-label="Office Toolbox home">
+            <span class="ot-brand-icon">🧰</span>
             <span>Office Toolbox</span>
-        </div>
+        </a>
 
-        <nav>
+        <nav class="ot-nav" aria-label="Main navigation">
             <a href="#tools">Tools</a>
             <a href="#about">About</a>
+            <a href="#privacy">Privacy</a>
         </nav>
 
-        <button class="nav-button" onclick="scrollToTools()">
-            Explore Tools
+        <button class="ot-button ot-button-small" onclick="scrollToTools()">
+            Explore tools
         </button>
     </header>
 
-    <!-- HERO -->
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="badge">
-                    ✨ Free office productivity tools
-                </div>
+        <section class="ot-hero">
+            <div class="ot-hero-copy">
+                <span class="ot-eyebrow">✨ SIMPLE TOOLS. LESS MANUAL WORK.</span>
 
                 <h1>
-                    Work smarter.
-                    <span>Not harder.</span>
+                    Make everyday office work
+                    <span>simpler and faster.</span>
                 </h1>
 
-                <p>
-                    Simple tools for Excel, files, PDFs and everyday
-                    office tasks — all in one place.
+                <p class="ot-hero-description">
+                    Practical online tools for PDFs and employee documents.
+                    Spend less time on repetitive tasks and more time on work
+                    that matters.
                 </p>
 
-                <div class="hero-buttons">
-                    <button
-                        class="primary-button"
-                        onclick="scrollToTools()">
-                        Explore Tools →
+                <div class="ot-hero-actions">
+                    <button class="ot-button" onclick="scrollToTools()">
+                        Explore free tools <span aria-hidden="true">→</span>
                     </button>
 
-                    <button
-                        class="secondary-button"
-                        onclick="showComingSoon()">
-                        What's coming?
-                    </button>
+                    <a class="ot-button ot-button-secondary" href="./merge-pdf.html">
+                        Merge PDF
+                    </a>
+                </div>
+
+                <div class="ot-hero-note">
+                    <span aria-hidden="true">✓</span>
+                    Straightforward tools for everyday tasks
+                </div>
+            </div>
+
+            <div class="ot-hero-visual" aria-hidden="true">
+                <div class="ot-visual-glow"></div>
+
+                <div class="ot-visual-card ot-visual-card-main">
+                    <div class="ot-visual-file-icon">📄</div>
+                    <div>
+                        <strong>Merge PDF</strong>
+                        <span>Combine documents in order</span>
+                    </div>
+                    <span class="ot-visual-check">✓</span>
+                </div>
+
+                <div class="ot-visual-card ot-visual-card-secondary">
+                    <div class="ot-visual-file-icon">📁</div>
+                    <div>
+                        <strong>Employee documents</strong>
+                        <span>Organize files into a pack</span>
+                    </div>
+                    <span class="ot-visual-check">✓</span>
+                </div>
+
+                <div class="ot-visual-caption">
+                    Your everyday work, organized.
                 </div>
             </div>
         </section>
 
-        <!-- TOOLS -->
-        <section class="tools-section" id="tools">
-            <div class="section-heading">
+        <section class="ot-tools-section" id="tools">
+            <div class="ot-section-heading">
                 <div>
-                    <p class="section-label">PRODUCTIVITY TOOLS</p>
-                    <h2>
-                        Everything you need for everyday office work.
-                    </h2>
+                    <span class="ot-section-label">OUR TOOLS</span>
+                    <h2>Get everyday tasks done with less effort.</h2>
                 </div>
 
-                <p class="section-description">
-                    Start with our most useful tools and more will be
-                    added over time.
+                <p>
+                    Start with our available tools. More practical office
+                    utilities may be added as the website grows.
                 </p>
             </div>
 
-            <div class="tools-grid">
+            <div class="ot-tools-grid">
 
-                <!-- EMPLOYEE DOCUMENT PACKER -->
-                <div class="tool-card featured">
-                    <div class="tool-icon">📁</div>
-
-                    <div class="tool-content">
-                        <span class="tool-tag">FEATURED TOOL</span>
-
-                        <h3>Employee Document Packer</h3>
-
-                        <p>
-                            Organize employee documents, rename files
-                            and create a downloadable document pack.
-                        </p>
-
-                        <button
-                            class="tool-button"
-                            onclick="openDocumentPacker()">
-                            Open Tool →
-                        </button>
+                <article class="ot-tool-card ot-tool-featured">
+                    <div class="ot-tool-topline">
+                        <span class="ot-tool-icon">📁</span>
+                        <span class="ot-status ot-status-live">Available now</span>
                     </div>
-                </div>
 
-                <!-- EXCEL -->
-                <div class="tool-card">
-                    <div class="tool-icon">📊</div>
-
-                    <span class="tool-tag">COMING SOON</span>
-
-                    <h3>Excel Tools</h3>
+                    <h3>Employee Document Packer</h3>
 
                     <p>
-                        Clean, compare, merge and organize Excel data
-                        faster.
+                        Organize employee documents and create a downloadable
+                        document pack for easier file handling.
                     </p>
 
-                    <button
-                        class="tool-button disabled"
-                        onclick="showComingSoon()">
-                        Coming Soon
+                    <ul class="ot-tool-features">
+                        <li>Upload employee documents</li>
+                        <li>Organize files by document type</li>
+                        <li>Download a packaged ZIP file</li>
+                    </ul>
+
+                    <button class="ot-tool-link" onclick="openDocumentPacker()">
+                        Open Document Packer <span aria-hidden="true">→</span>
                     </button>
-                </div>
+                </article>
 
-                <!-- MERGE PDF -->
-                <div class="tool-card">
-                    <div class="tool-icon">📄</div>
-
-                    <span class="tool-tag">AVAILABLE NOW</span>
+                <article class="ot-tool-card">
+                    <div class="ot-tool-topline">
+                        <span class="ot-tool-icon">📄</span>
+                        <span class="ot-status ot-status-live">Available now</span>
+                    </div>
 
                     <h3>Merge PDF</h3>
 
                     <p>
-                        Combine multiple PDFs, preview files, check page
-                        counts, rearrange their order and download one
-                        merged PDF.
+                        Combine multiple PDF files into one document, preview
+                        files, check page counts, and arrange their order.
                     </p>
 
-                    <button
-                        class="tool-button"
-                        onclick="window.location.href='./merge-pdf.html'">
-                        Merge PDFs →
+                    <ul class="ot-tool-features">
+                        <li>Preview and reorder PDFs</li>
+                        <li>Check file sizes and page counts</li>
+                        <li>Download one merged PDF</li>
+                    </ul>
+
+                    <a class="ot-tool-link" href="./merge-pdf.html">
+                        Open Merge PDF <span aria-hidden="true">→</span>
+                    </a>
+                </article>
+
+                <article class="ot-tool-card ot-tool-upcoming">
+                    <div class="ot-tool-topline">
+                        <span class="ot-tool-icon">📊</span>
+                        <span class="ot-status ot-status-soon">Coming soon</span>
+                    </div>
+
+                    <h3>Excel Tools</h3>
+
+                    <p>
+                        Future utilities for cleaning, comparing, and
+                        organizing spreadsheet data.
+                    </p>
+
+                    <button class="ot-tool-link" onclick="showComingSoon()">
+                        Planned tool <span aria-hidden="true">→</span>
                     </button>
-                </div>
+                </article>
 
-                <!-- FILES -->
-                <div class="tool-card">
-                    <div class="tool-icon">🗂️</div>
-
-                    <span class="tool-tag">COMING SOON</span>
+                <article class="ot-tool-card ot-tool-upcoming">
+                    <div class="ot-tool-topline">
+                        <span class="ot-tool-icon">🗂️</span>
+                        <span class="ot-status ot-status-soon">Coming soon</span>
+                    </div>
 
                     <h3>File Tools</h3>
 
                     <p>
-                        Rename, organize and manage large numbers of
-                        files quickly.
+                        Future tools to help rename and organize files for
+                        everyday office workflows.
                     </p>
 
-                    <button
-                        class="tool-button disabled"
-                        onclick="showComingSoon()">
-                        Coming Soon
+                    <button class="ot-tool-link" onclick="showComingSoon()">
+                        Planned tool <span aria-hidden="true">→</span>
                     </button>
-                </div>
-
-                <!-- EMAIL -->
-                <div class="tool-card">
-                    <div class="tool-icon">✉️</div>
-
-                    <span class="tool-tag">COMING SOON</span>
-
-                    <h3>Office Email Tools</h3>
-
-                    <p>
-                        Create clear and professional workplace emails
-                        in seconds.
-                    </p>
-
-                    <button
-                        class="tool-button disabled"
-                        onclick="showComingSoon()">
-                        Coming Soon
-                    </button>
-                </div>
+                </article>
 
             </div>
         </section>
 
-        <!-- WHY OFFICE TOOLBOX -->
-        <section class="about-section" id="about">
-            <div class="about-card">
-                <div class="about-icon">⚡</div>
+        <section class="ot-benefits-section">
+            <div class="ot-benefits-heading">
+                <span class="ot-section-label">WHY OFFICE TOOLBOX?</span>
+                <h2>Useful tools without the unnecessary complexity.</h2>
+                <p>
+                    We focus on practical tasks that people encounter in
+                    everyday office work.
+                </p>
+            </div>
 
+            <div class="ot-benefits-grid">
+                <article class="ot-benefit">
+                    <span class="ot-benefit-icon">⚡</span>
+                    <h3>Save time</h3>
+                    <p>Reduce repetitive manual steps with purpose-built tools.</p>
+                </article>
+
+                <article class="ot-benefit">
+                    <span class="ot-benefit-icon">🖥️</span>
+                    <h3>Easy to use</h3>
+                    <p>Clear instructions and straightforward workflows.</p>
+                </article>
+
+                <article class="ot-benefit">
+                    <span class="ot-benefit-icon">🧰</span>
+                    <h3>Made for office tasks</h3>
+                    <p>Tools for documents and common workplace activities.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ot-about-section" id="about">
+            <div class="ot-about-card">
+                <div class="ot-about-symbol" aria-hidden="true">💡</div>
                 <div>
-                    <p class="section-label">OFFICE TOOLBOX</p>
-
-                    <h2>Small tools. Big time savings.</h2>
-
+                    <span class="ot-section-label">ABOUT OFFICE TOOLBOX</span>
+                    <h2>Small tools can make work easier.</h2>
                     <p>
-                        We are building practical tools for repetitive
-                        office tasks so you can spend less time doing
-                        boring manual work.
+                        Office Toolbox is a growing collection of online
+                        utilities designed to simplify repetitive office
+                        tasks. We aim to make practical tools easier to find
+                        and straightforward to use.
                     </p>
                 </div>
+            </div>
+        </section>
+
+        <section class="ot-privacy-section" id="privacy">
+            <div>
+                <span class="ot-section-label">YOUR FILES</span>
+                <h2>Understand how file processing works.</h2>
+                <p>
+                    Upload only files you are authorized to share. The tools
+                    process files to provide the requested output, and
+                    temporary server files are scheduled for cleanup after
+                    processing. Avoid uploading highly sensitive documents
+                    unless you are comfortable using this service.
+                </p>
+                <p>
+                    This is a brief privacy summary, not a complete privacy
+                    policy. We will publish a detailed policy describing file
+                    handling, retention, hosting, analytics, and advertising
+                    technologies before applying for advertising.
+                </p>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="logo">
-            🧰 Office Toolbox
+    <footer class="ot-footer">
+        <a class="ot-brand" href="./index.html">
+            <span class="ot-brand-icon">🧰</span>
+            <span>Office Toolbox</span>
+        </a>
+
+        <p>Practical tools for everyday office work.</p>
+
+        <div class="ot-footer-links">
+            <a href="#tools">Tools</a>
+            <a href="#about">About</a>
+            <a href="#privacy">Privacy information</a>
         </div>
 
-        <p>Simple tools for everyday work.</p>
-
-        <p class="copyright">
-            © 2026 Office Toolbox
-        </p>
+        <p class="ot-copyright">© 2026 Office Toolbox</p>
     </footer>
 
-    <script src="script.js"></script>
+</div>
+
+<script src="./script.js"></script>
 </body>
 </html>
+```
