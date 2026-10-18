@@ -1767,3 +1767,724 @@ footer .footer-inner {
         width: calc(100% - 20px);
     }
 }
+
+/* ==========================================
+   OFFICE TOOLBOX HOMEPAGE REDESIGN
+   Homepage-only styles: .ot-page
+   ========================================== */
+
+.ot-page {
+    --ot-blue: #2563eb;
+    --ot-blue-dark: #1d4ed8;
+    --ot-ink: #14213d;
+    --ot-muted: #64748b;
+    --ot-border: #e2e8f0;
+    --ot-light: #f4f7fc;
+
+    color: var(--ot-ink);
+    background: #ffffff;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.ot-page *,
+.ot-page *::before,
+.ot-page *::after {
+    box-sizing: border-box;
+}
+
+.ot-page a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ot-page button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.ot-page button:focus-visible,
+.ot-page a:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 4px;
+}
+
+.ot-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 28px;
+}
+
+.ot-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.ot-brand-icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    background: #eff6ff;
+    font-size: 23px;
+}
+
+.ot-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.ot-nav a,
+.ot-footer-links a {
+    color: var(--ot-muted);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.ot-nav a:hover,
+.ot-footer-links a:hover {
+    color: var(--ot-blue);
+}
+
+.ot-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 1px solid var(--ot-blue);
+    border-radius: 12px;
+    background: var(--ot-blue);
+    color: #ffffff;
+    font-weight: 700;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ot-button:hover {
+    background: var(--ot-blue-dark);
+    transform: translateY(-2px);
+}
+
+.ot-button-small {
+    min-height: 42px;
+    padding: 9px 17px;
+    font-size: 14px;
+}
+
+.ot-button-secondary {
+    border-color: var(--ot-border);
+    background: #ffffff;
+    color: var(--ot-ink);
+}
+
+.ot-button-secondary:hover {
+    border-color: var(--ot-blue);
+    background: #eff6ff;
+    color: var(--ot-blue-dark);
+}
+
+.ot-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 48px;
+    max-width: 1200px;
+    min-height: 460px;
+    margin: 0 auto;
+    padding: 64px 38px 78px;
+}
+
+.ot-hero::before {
+    position: absolute;
+    z-index: 0;
+    top: 12px;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    border: 1px solid #e8eef9;
+    border-radius: 32px;
+    background: linear-gradient(135deg, #f7faff 0%, #eef4ff 100%);
+    content: "";
+}
+
+.ot-hero-copy,
+.ot-hero-visual {
+    position: relative;
+    z-index: 1;
+}
+
+.ot-eyebrow,
+.ot-section-label {
+    display: inline-block;
+    color: var(--ot-blue);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.ot-eyebrow {
+    padding: 8px 12px;
+    border: 1px solid #dbeafe;
+    border-radius: 999px;
+    background: #ffffff;
+    letter-spacing: 0.4px;
+}
+
+.ot-hero h1 {
+    max-width: 650px;
+    margin: 22px 0 18px;
+    color: var(--ot-ink);
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 850;
+    line-height: 1.08;
+    letter-spacing: -2.2px;
+}
+
+.ot-hero h1 span {
+    display: block;
+    color: var(--ot-blue);
+}
+
+.ot-hero-description {
+    max-width: 560px;
+    margin: 0;
+    color: var(--ot-muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.ot-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.ot-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 22px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.ot-hero-note span {
+    display: grid;
+    place-items: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background: #dcfce7;
+    color: #15803d;
+    font-weight: 800;
+}
+
+.ot-hero-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    min-height: 280px;
+    padding: 28px;
+}
+
+.ot-visual-glow {
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    right: 2%;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: #dbeafe;
+    filter: blur(2px);
+}
+
+.ot-visual-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 14px 35px rgba(30, 64, 175, 0.08);
+}
+
+.ot-visual-card-secondary {
+    margin-left: 24px;
+}
+
+.ot-visual-file-icon {
+    display: grid;
+    flex: 0 0 48px;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #eff6ff;
+    font-size: 24px;
+}
+
+.ot-visual-card strong,
+.ot-visual-card span {
+    display: block;
+}
+
+.ot-visual-card strong {
+    font-size: 15px;
+}
+
+.ot-visual-card div:nth-child(2) span {
+    margin-top: 3px;
+    color: var(--ot-muted);
+    font-size: 12px;
+}
+
+.ot-visual-check {
+    margin-left: auto;
+    color: #16a34a;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.ot-visual-caption {
+    color: var(--ot-muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+.ot-tools-section,
+.ot-benefits-section,
+.ot-about-section,
+.ot-privacy-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 78px 38px;
+    scroll-margin-top: 24px;
+}
+
+.ot-section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.ot-section-heading h2,
+.ot-benefits-heading h2,
+.ot-about-card h2,
+.ot-privacy-section h2 {
+    margin: 10px 0 0;
+    color: var(--ot-ink);
+    font-size: clamp(27px, 3vw, 38px);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.ot-section-heading > div {
+    max-width: 650px;
+}
+
+.ot-section-heading > p {
+    max-width: 360px;
+    margin: 0;
+    color: var(--ot-muted);
+    font-size: 14px;
+}
+
+.ot-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.ot-tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 28px;
+    border: 1px solid var(--ot-border);
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 8px 26px rgba(15, 23, 42, 0.035);
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.ot-tool-card:hover {
+    transform: translateY(-4px);
+    border-color: #bfdbfe;
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.075);
+}
+
+.ot-tool-featured {
+    border-color: #c7d9ff;
+    background: linear-gradient(145deg, #f7faff, #ffffff 70%);
+}
+
+.ot-tool-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 23px;
+}
+
+.ot-tool-icon {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 17px;
+    background: #eff6ff;
+    font-size: 28px;
+}
+
+.ot-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.ot-status-live {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.ot-status-soon {
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.ot-tool-card h3 {
+    margin: 0 0 10px;
+    color: var(--ot-ink);
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.ot-tool-card > p {
+    margin: 0;
+    color: var(--ot-muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.ot-tool-features {
+    display: grid;
+    gap: 9px;
+    margin: 20px 0 24px;
+    padding: 0;
+    list-style: none;
+    color: #475569;
+    font-size: 13px;
+}
+
+.ot-tool-features li::before {
+    margin-right: 9px;
+    color: #16a34a;
+    font-weight: 800;
+    content: "✓";
+}
+
+.ot-tool-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding: 9px 0;
+    border: 0;
+    background: transparent;
+    color: var(--ot-blue);
+    font-size: 14px;
+    font-weight: 800;
+    text-align: left;
+}
+
+.ot-tool-link:hover {
+    color: var(--ot-blue-dark);
+}
+
+.ot-tool-upcoming {
+    background: #fbfcfe;
+}
+
+.ot-benefits-section {
+    max-width: none;
+    background: var(--ot-light);
+}
+
+.ot-benefits-heading {
+    max-width: 740px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.ot-benefits-heading > p {
+    margin: 16px 0 0;
+    color: var(--ot-muted);
+}
+
+.ot-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    max-width: 1124px;
+    margin: 0 auto;
+}
+
+.ot-benefit {
+    padding: 25px;
+    border: 1px solid #e5ebf5;
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.ot-benefit-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    background: #eff6ff;
+    font-size: 23px;
+}
+
+.ot-benefit h3 {
+    margin: 18px 0 7px;
+    font-size: 17px;
+}
+
+.ot-benefit p {
+    margin: 0;
+    color: var(--ot-muted);
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+.ot-about-section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.ot-about-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 22px;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 34px;
+    border: 1px solid var(--ot-border);
+    border-radius: 22px;
+}
+
+.ot-about-symbol {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+    background: #eff6ff;
+    font-size: 28px;
+}
+
+.ot-about-card p,
+.ot-privacy-section p {
+    color: var(--ot-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.ot-privacy-section {
+    padding-top: 38px;
+    padding-bottom: 70px;
+}
+
+.ot-privacy-section > div {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 28px 0;
+    border-top: 1px solid var(--ot-border);
+}
+
+.ot-footer {
+    padding: 38px 24px 25px;
+    border-top: 1px solid var(--ot-border);
+    background: #fbfcff;
+    text-align: center;
+}
+
+.ot-footer .ot-brand {
+    justify-content: center;
+}
+
+.ot-footer > p {
+    color: var(--ot-muted);
+    font-size: 13px;
+}
+
+.ot-footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+    margin: 20px 0;
+}
+
+.ot-footer .ot-copyright {
+    margin-top: 24px;
+    font-size: 12px;
+}
+
+@media (max-width: 760px) {
+    .ot-navbar {
+        flex-wrap: wrap;
+        gap: 14px;
+        padding: 16px 20px;
+    }
+
+    .ot-brand {
+        font-size: 18px;
+    }
+
+    .ot-nav {
+        order: 3;
+        justify-content: center;
+        width: 100%;
+        gap: 24px;
+        padding-top: 8px;
+    }
+
+    .ot-navbar > .ot-button {
+        margin-left: auto;
+    }
+
+    .ot-hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 48px 24px 50px;
+    }
+
+    .ot-hero::before {
+        right: 10px;
+        left: 10px;
+        border-radius: 24px;
+    }
+
+    .ot-hero h1 {
+        font-size: clamp(35px, 9vw, 48px);
+        letter-spacing: -1.5px;
+    }
+
+    .ot-hero-description {
+        font-size: 15px;
+    }
+
+    .ot-hero-visual {
+        min-height: auto;
+        padding: 20px 0 8px;
+    }
+
+    .ot-visual-card {
+        padding: 16px;
+    }
+
+    .ot-visual-card-secondary {
+        margin-left: 12px;
+    }
+
+    .ot-tools-section,
+    .ot-benefits-section,
+    .ot-about-section,
+    .ot-privacy-section {
+        padding: 54px 22px;
+    }
+
+    .ot-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .ot-tools-grid,
+    .ot-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ot-tool-card {
+        padding: 23px;
+    }
+
+    .ot-about-card {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .ot-privacy-section {
+        padding-top: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .ot-navbar {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .ot-navbar > .ot-button {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .ot-hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .ot-hero-actions .ot-button {
+        width: 100%;
+    }
+
+    .ot-visual-card {
+        gap: 10px;
+    }
+
+    .ot-visual-file-icon {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ot-page *,
+    .ot-page *::before,
+    .ot-page *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
