@@ -1,9 +1,25 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://mhariharan0328-art.github.io/office-toolbox/</loc>
   </url>
+
   <url>
     <loc>https://mhariharan0328-art.github.io/office-toolbox/packer.html</loc>
   </url>
+
+  <url>
+    <loc>https://mhariharan0328-art.github.io/office-toolbox/merge-pdf.html</loc>
+  </url>
+
+  <url>
+    <loc>https://mhariharan0328-art.github.io/office-toolbox/privacy.html</loc>
+  </url>
+
+  <url>
+    <loc>https://mhariharan0328-art.github.io/office-toolbox/contact.html</loc>
+  </url>
+
 </urlset>
